@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% set my_list = {"Фамилия:": surname,
+                    "Имя:": name,
+                    "Образование:": education,
+                    "Профессия:": profession,
+                    "Пол:": sex,
+                    "Мотивация:": motivation,
+                    "Готовы остаться на Марсе?": ready} %}
+    {% for key in my_list %}
+<div align="center"><font color="brown" size="5">{{key}} {{my_list[key]}}</font></div>
+    {% endfor %}
+{% endblock %}

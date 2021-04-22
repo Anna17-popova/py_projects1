@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 align="center">Список профессий</h2>
+    {% set my_list = ['инженер исследователь', 'пилот', 'строитель', 'экзобиолог', 'врач',
+              'климатолог', 'штурман', 'пилот дронов'] %}
+    {% if type == "ol"%}
+        <ol>
+            {% for item in my_list %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <ul>
+            {% for item in my_list %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

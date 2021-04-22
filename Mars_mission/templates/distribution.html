@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set number = "Каюта №" %}
+{% for name in mylist %}
+<div align="center"><font color="brown" size="5">{{name}} - {{number}} {{loop.index}} {% if loop.first %} - капитан корабля {% endif %}</font></div>
+{% endfor %}
+{% endblock %}
