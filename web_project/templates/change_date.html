@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Изменение профиля</h1>
+<table align="center" width="700" cellspacing="30">
+    <tr>
+        <td align="center" width="180">
+            <img src='{{  current_user.image  }}' width="180" height="200">
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <br>
+        <form action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="file">
+                            <input type="submit" value="Изменить аватар">
+                   </form>
+        </td>
+    </tr>
+</table>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(class="form-control") }}<br>
+        {% for error in form.name.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.surname.label }}<br>
+        {{ form.surname(class="form-control") }}<br>
+        {% for error in form.surname.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.age.label }}<br>
+        {{ form.age(class="form-control") }}<br>
+        {% for error in form.age.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.sity.label }}<br>
+        {{ form.sity(class="form-control") }}<br>
+        {% for error in form.sity.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control") }}<br>
+        {% for error in form.email.errors %}
+            <p content="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p align="center">{{ form.submit2(type="submit", class="btn btn-success") }}</p>
+</form>
+<p align="left">
+<a class="btn btn-success" href="/lk">Назад</a>
+</p>
+{% endblock %}

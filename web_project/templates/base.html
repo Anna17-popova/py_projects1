@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <title>{{title}}</title>
+</head>
+<body background="/static/img/fon3.jpg">
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <div><img src="/static/img/flower.jpg" height="60" width="60"> </div>
+        <div>
+        <a class="btn btn-success" href="/about">О нас</a>
+        <a class="btn btn-success" href="/catalog">Каталог</a>
+        <a class="btn btn-success" href="/delivery">Доставка и оплата</a>
+        <a class="btn btn-success" href="/contact">Контакты</a>
+        </div>
+        {% if current_user.is_authenticated %}
+        <div align="right">
+        <a class="navbar-brand" href="/basket">Корзина</a>
+    <a class="navbar-brand" href="/lk">Личный кабинет</a>
+        </div>
+    {% else %}
+    <div align="right">
+        <a class="navbar-brand" href="/register">Зарегистрироваться</a>
+        <a class="navbar-brand" href="/authorization">Войти</a>
+    </div>
+    {% endif %}
+    </nav>
+    <main role="main" class="container">
+    {% block content %}{% endblock %}
+</main>
+</header>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 align="center">Корзина</h2>
+{% if message %}
+{{  message  }}
+{% else %}
+    {% for product in mylist %}
+        <div>
+        <table border="1" cellpadding="10" width="1200">
+            <tr>
+                <td width="200">
+            <img src="{{  product[-3]  }}" width="200" height="200">
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <h2 align="left">{{  product[0]}}</h2><br>
+                        </tr>
+                        <tr>{{  product[-2]  }}</tr><br>
+                        <tr align="left"><strong>Цена: {{  product[1]  }}</strong></tr>
+                        <div align="right">
+                    <a class="btn btn-danger" href="/del_from_basket/{{  product[-1]  }}">Удалить из корзины</a>
+                    <a class="btn btn-success" href="/product/{{  product[-1]  }}">Подробнее</a>
+                        </div>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </div>
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,5 @@
+body {
+		background: url('static/img/background.jpg'); /* Фоновый цвет и фоновый рисунок*/
+		color: #fff; /*Цвет текста на странице*/
+		background-size: 100%;
+	}

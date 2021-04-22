@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<table align="center" width="700" cellpadding="10">
+    <tr>
+        <td align="center" width="180">
+            <img src='{{  current_user.image  }}' width="180" height="200">
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <strong>Имя: {{  current_user.name  }}</strong>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <strong>Фалимия: {{  current_user.surname  }}</strong>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <strong>Возраст: {{  current_user.age  }}</strong>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <strong>Город: {{  current_user.sity  }}</strong>
+        </td>
+    </tr>
+    <tr>
+        <td align="center">
+            <strong>Email: {{  current_user.email  }}</strong>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <br>
+            <div align="center">
+                <a class="btn btn-danger" href="/user_delete">Удалить пользователя</a>
+            <a class="btn btn-success" href="/change_date">Изменить данные о пользователе</a>
+            <a class="btn btn-success" href="/logout">Выйти</a>
+            </div>
+        </td>
+    </tr>
+</table>
+{% endblock %}
